@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\PCI-Backend.API.props" />
+</Project>
