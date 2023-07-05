@@ -1,0 +1,52 @@
+<html>
+  <head>
+    <title></title>
+    <link rel="stylesheet" hre="tarjeta-credito.components.scss">
+  </head>
+  <body>
+    <h1>Tarjeta Credito</h1>
+
+    <div>
+        <h3>Agregar Tarjeta</h3>
+
+        <form [formGroup]="form" (ngSubmit)="guardarTarjeta()">
+            <div class="form-group">
+                <label for="nombre-titular">Nombre del titular:</label>
+                <input formControlName="titular" type="text" placeholder="Titular" >
+            </div>
+            <div class="form-group">
+                <label for="numero-tarjeta">Número de tarjeta:</label>
+                <input formControlName="numeroTarjeta" type="text" placeholder="Numero de Tarjeta" >
+            </div>
+            <div class="form-group">
+                <label for="fecha-vencimiento">Fecha de vencimiento:</label>
+                <input formControlName="fechaExpiracion" type="text" placeholder="MM/AA" >
+            </div>
+            <div class="form-group">
+                <label for="cvv">CVV:</label>
+                <input formControlName="cvv" type="text" placeholder="cvv" >
+            </div>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+    <div>
+        <h3>LISTADO TARJETAS</h3>
+        <table>
+            <tbody>
+                <tr *ngFor="let tarjeta of listTarjetas">
+                    <td>{{tarjeta.titular}}</td>
+                    <td>{{tarjeta.numeroTarjeta}}</td>
+                    <td>{{tarjeta.fechaExpiracion}}</td>
+                    <td>
+                        <button></button>
+                    </td> 
+                        <button></button>                                   
+                    <td>
+                        <i ></i>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+  </body>
+</html>
