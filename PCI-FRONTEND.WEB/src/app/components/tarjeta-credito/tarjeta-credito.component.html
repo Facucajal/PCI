@@ -11,22 +11,22 @@
 
         <form [formGroup]="form" (ngSubmit)="guardarTarjeta()">
             <div class="form-group">
-                <label for="nombre-titular">Nombre del titular:</label>
+                <label >Nombre del titular:</label>
                 <input formControlName="titular" type="text" placeholder="Titular" >
             </div>
             <div class="form-group">
-                <label for="numero-tarjeta">Número de tarjeta:</label>
+                <label >Número de tarjeta:</label>
                 <input formControlName="numeroTarjeta" type="text" placeholder="Numero de Tarjeta" >
             </div>
             <div class="form-group">
-                <label for="fecha-vencimiento">Fecha de vencimiento:</label>
+                <label >Fecha de vencimiento:</label>
                 <input formControlName="fechaExpiracion" type="text" placeholder="MM/AA" >
             </div>
             <div class="form-group">
-                <label for="cvv">CVV:</label>
+                <label >CVV:</label>
                 <input formControlName="cvv" type="text" placeholder="cvv" >
             </div>
-            <button type="submit">Enviar</button>
+            <button  type="submit">Enviar</button>
         </form>
     </div>
     <div>
@@ -37,10 +37,11 @@
                     <td>{{tarjeta.titular}}</td>
                     <td>{{tarjeta.numeroTarjeta}}</td>
                     <td>{{tarjeta.fechaExpiracion}}</td>
+                    <td>{{tarjeta.cvv}}</td>
                     <td>
-                        <button></button>
+                        <button (click) ="editarTarjeta(tarjeta)">Editar</button>
                     </td> 
-                        <button></button>                                   
+                        <button (click)="eliminarTarjeta(tarjeta.id)">Eliminar</button>                                   
                     <td>
                         <i ></i>
                     </td>

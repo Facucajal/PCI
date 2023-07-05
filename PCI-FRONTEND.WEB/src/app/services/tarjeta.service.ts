@@ -6,11 +6,12 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class TarjetaService {
-  private myAppUrl = 'https://localhost:7153/'
+  private myAppUrl = 'https://localhost:7049/'
   private myApiUrl = 'api/Tarjeta/'
 
   constructor(private http: HttpClient) { }
 
+  //Peticiones Asincronas
   getListTarjetas(): Observable <any> {
     return this.http.get(this.myAppUrl + this.myApiUrl);
   }

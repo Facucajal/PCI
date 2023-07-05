@@ -29,12 +29,13 @@ export class TarjetaCreditoComponent implements OnInit {
   }
 
   obtenerTarjetas(){
-    /*this._tarjetaService.getListTarjetas().subscribe(data => {
+    //Me suscribo al observable
+    this._tarjetaService.getListTarjetas().subscribe(data => {
       console.log(data);
       this.listTarjetas = data;
     }, error => {
       console.log(error);
-    })*/
+    })
   }
 
   guardarTarjeta(){
