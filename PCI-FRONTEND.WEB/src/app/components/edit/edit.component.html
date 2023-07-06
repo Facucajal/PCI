@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <title></title>
+    <link rel="stylesheet" hre="tarjeta-credito.components.scss">
+  </head>
+  <body>
+    <div>
+        <h3 class="titulo">{{ accion | uppercase}} TARJETA</h3>
+
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label >Nombre del titular:</label>
+                <input formControlName="titular" type="text" placeholder="Titular" >
+            </div>
+            <div class="form-group">
+                <label >Número de tarjeta:</label>
+                <input formControlName="numeroTarjeta" type="text" placeholder="Numero de Tarjeta" >
+            </div>
+            <div class="form-group">
+                <label >Fecha de vencimiento:</label>
+                <input formControlName="fechaExpiracion" type="text" placeholder="MM/AA" >
+            </div>
+            <div class="form-group">
+                <label >CVV:</label>
+                <input formControlName="cvv" type="text" placeholder="cvv" >
+            </div>
+            <button  type="submit">Enviar</button>
+        </form>
+    </div>
+    <div>
+    </div>
+  </body>
+</html>

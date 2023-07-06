@@ -5,16 +5,30 @@ import { AppComponent } from './app.component';
 import { TarjetaCreditoComponent } from './components/tarjeta-credito/tarjeta-credito.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import { CreateComponent } from './components/create/create.component';
+
+import { RouterModule } from '@angular/router';
+import { TarjetasComponent } from './components/tarjetas/tarjetas.component';
+import { EditComponent } from './components/edit/edit.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TarjetaCreditoComponent
+    TarjetaCreditoComponent,
+    CreateComponent,
+    TarjetasComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    //Toma arreglo de objetos que definen las rutas
+    RouterModule.forRoot([
+      {path:'create',component:CreateComponent},
+      {path:'tarjetas',component:TarjetasComponent},
+      {path:'edit/:id',component:EditComponent}
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]

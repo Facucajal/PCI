@@ -33,9 +33,22 @@ namespace PCI_Backend.API.Controllers
 
         // GET api/<ValuesController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public async Task<IActionResult> Get(int id)
         {
-            return "value";
+            try
+            {
+                var tarjeta = await _context.TarjetaCredito.FindAsync(id);
+
+                if (tarjeta == null)
+                {
+                    return NotFound();
+                }
+                return Ok(tarjeta);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         // POST api/<ValuesController>
