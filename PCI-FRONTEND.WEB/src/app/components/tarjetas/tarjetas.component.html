@@ -8,6 +8,12 @@
         <h3>LISTADO TARJETAS</h3>
         <table>
             <tbody>
+                <tr>
+                    <td>Titular</td>
+                    <td>Numero de Tarjeta</td>
+                    <td>Fecha Expiracion</td>
+                    <td>Cvv</td>
+                </tr>
                 <tr *ngFor="let tarjeta of listTarjetas">
                     <td>{{tarjeta.titular}}</td>
                     <td>{{tarjeta.numeroTarjeta}}</td>
@@ -24,5 +30,6 @@
             </tbody>
         </table>
     </div>
+    
   </body>
 </html>

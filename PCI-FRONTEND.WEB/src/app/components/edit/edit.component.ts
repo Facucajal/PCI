@@ -10,10 +10,7 @@ import {Router,ActivatedRoute} from '@angular/router'
 })
 export class EditComponent implements OnInit {
   listTarjetas: any[] = [];
-  
-  accion = 'Agregar';
   form: FormGroup;
-  id: number | undefined;
 
   constructor(
     private fb: FormBuilder,
@@ -33,8 +30,8 @@ export class EditComponent implements OnInit {
 
 
   ngOnInit(): void {
-    const id2 = parseInt(this.activeRoute.snapshot.paramMap.get('id'))
-    this.mostrarTarjeta(id2);
+    const id = parseInt(this.activeRoute.snapshot.paramMap.get('id'))
+    this.mostrarTarjeta(id);
   }
 
   onSubmit(){

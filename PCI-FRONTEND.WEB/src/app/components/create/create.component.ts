@@ -10,9 +10,8 @@ import {Router} from '@angular/router'
 })
 export class CreateComponent implements OnInit {
   listTarjetas: any[] = [];
-  accion = 'Agregar';
   form: FormGroup;
-  id: number | undefined;
+
 
   constructor(
     private fb: FormBuilder,
@@ -53,31 +52,13 @@ export class CreateComponent implements OnInit {
       cvv: this.form.get('cvv')?.value,
     }
 
-    if(this.id == undefined){
-      //Agregamos una nueva tarjerta
+    this._tarjetaService.saveTarjeta(tarjeta).subscribe(data => {
 
-      this._tarjetaService.saveTarjeta(tarjeta).subscribe(data => {
+      this.router.navigate(['/tarjetas'])
+      this.form.reset();
+    }, error => {
 
-        //this.obtenerTarjetas();
-        this.router.navigate(['/tarjetas'])
-        this.form.reset();
-      }, error => {
-
-        console.log(error)
-      })
-    }
-    else{
-      tarjeta.id = this.id;
-      //Editamos Tarjeta
-      this._tarjetaService.updateTarjeta(this.id,tarjeta).subscribe(data => {
-        this.form.reset();
-        this.accion='Agregar';
-        this.id = undefined;
-
-        this.obtenerTarjetas();
-      }, error => {
-        console.log(error)
-      })
-    }    
+      console.log(error)
+    })
   }
 }

@@ -9,9 +9,7 @@ import { TarjetaService } from 'src/app/services/tarjeta.service';
 })
 export class TarjetasComponent implements OnInit{
   listTarjetas: any[] = [];
-  accion = 'Agregar';
   form: FormGroup;
-  id: number | undefined;
 
   constructor(private fb: FormBuilder,
     private _tarjetaService: TarjetaService) {
@@ -38,43 +36,6 @@ export class TarjetasComponent implements OnInit{
     })
   }
 
-  guardarTarjeta(){
-
-    const tarjeta: any ={
-      titular: this.form.get('titular')?.value,
-      numeroTarjeta: this.form.get('numeroTarjeta')?.value,
-      fechaExpiracion: this.form.get('fechaExpiracion')?.value,
-      cvv: this.form.get('cvv')?.value,
-    }
-
-    if(this.id == undefined){
-      //Agregamos una nueva tarjerta
-
-      this._tarjetaService.saveTarjeta(tarjeta).subscribe(data => {
-
-        this.obtenerTarjetas();
-        this.form.reset();
-      }, error => {
-
-        console.log(error)
-      })
-    }
-    else{
-
-      tarjeta.id = this.id;
-      //Editamos Tarjeta
-      this._tarjetaService.updateTarjeta(this.id,tarjeta).subscribe(data => {
-        this.form.reset();
-        this.accion='Agregar';
-        this.id = undefined;
-
-        this.obtenerTarjetas();
-      }, error => {
-        console.log(error)
-      })
-    } 
-  }
-
   eliminarTarjeta(id: number){
     this._tarjetaService.deleteTarjeta(id).subscribe(data =>{
 
@@ -85,15 +46,4 @@ export class TarjetasComponent implements OnInit{
     
   }
   
-  editarTarjeta(tarjeta: any){
-    this.accion = 'Editar';
-    this.id = tarjeta.id;
-
-    this.form.patchValue({
-      titular: tarjeta.titular,
-      numeroTarjeta: tarjeta.numeroTarjeta,
-      fechaExpiracion: tarjeta.fechaExpiracion,
-      cvv: tarjeta.cvv
-    })
-  }
 }
