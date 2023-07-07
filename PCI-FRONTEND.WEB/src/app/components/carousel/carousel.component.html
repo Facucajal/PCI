@@ -1,0 +1,54 @@
+<html>
+  <head>
+    <title></title>
+    <link rel="stylesheet" hre="carousel.components.scss">
+  </head>
+  <body>
+    <form [formGroup]="form">
+        <div class="contenedor">
+            <section class="tarjeta" id="tarjeta">
+                <div class="delantera">
+                    <div class="logo-marca" id="logo-marca">
+                        <!-- <img src="img/logos/visa.png" alt=""> -->
+                    </div>
+                    <!--img src="img/chip-tarjeta.png" class="chip" alt=""-->
+                    <div class="datos">
+                        <div class="grupo" id="numero">
+                            <p class="label">Número Tarjeta</p>
+                            <p class="numero">{{tarjeta?.numeroTarjeta}}</p>
+                        </div>
+                        <div class="flexbox">
+                            <div class="grupo" id="nombre">
+                                <p class="label">Nombre Tarjeta</p>
+                                <p class="nombre">{{tarjeta?.titular}}</p>
+                            </div>
+
+                            <div class="grupo" id="expiracion">
+                                <p class="label">Expiracion</p>
+                                <p class="expiracion">{{tarjeta?.fechaExpiracion}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--div class="trasera">
+                    <div class="barra-magnetica"></div>
+                    <div class="datos">
+                        <div class="grupo" id="firma">
+                            <p class="label">Firma</p>
+                            <div class="firma"><p></p></div>
+                        </div>
+                        <div class="grupo" id="ccv">
+                            <p class="label">CCV</p>
+                            <p class="ccv"></p>
+                        </div>
+                    </div>
+                    <p class="leyenda">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus exercitationem, voluptates illo.</p>
+                    <a href="#" class="link-banco">www.tubanco.com</a>
+                </div-->
+            </section>
+        </div>
+
+    </form>
+  </body>
+</html>

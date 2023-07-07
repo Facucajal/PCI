@@ -10,6 +10,7 @@ import { CreateComponent } from './components/create/create.component';
 import { RouterModule } from '@angular/router';
 import { TarjetasComponent } from './components/tarjetas/tarjetas.component';
 import { EditComponent } from './components/edit/edit.component';
+import { CarouselComponent } from './components/carousel/carousel.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { EditComponent } from './components/edit/edit.component';
     TarjetaCreditoComponent,
     CreateComponent,
     TarjetasComponent,
-    EditComponent
+    EditComponent,
+    CarouselComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +29,8 @@ import { EditComponent } from './components/edit/edit.component';
     RouterModule.forRoot([
       {path:'create',component:CreateComponent},
       {path:'tarjetas',component:TarjetasComponent},
-      {path:'edit/:id',component:EditComponent}
+      {path:'edit/:id',component:EditComponent},
+      {path:'',component:CarouselComponent}
     ])
   ],
   providers: [],

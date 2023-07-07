@@ -1,34 +1,39 @@
 <html>
   <head>
     <title></title>
-    <link rel="stylesheet" hre="tarjetas.components.scss">
   </head>
   <body>
-    <div>
-        <h3>LISTADO TARJETAS</h3>
-        <table>
-            <tbody>
-                <tr>
-                    <td>Titular</td>
-                    <td>Numero de Tarjeta</td>
-                    <td>Fecha Expiracion</td>
-                    <td>Cvv</td>
-                </tr>
-                <tr *ngFor="let tarjeta of listTarjetas">
-                    <td>{{tarjeta.titular}}</td>
-                    <td>{{tarjeta.numeroTarjeta}}</td>
-                    <td>{{tarjeta.fechaExpiracion}}</td>
-                    <td>{{tarjeta.cvv}}</td>
-                    <td>
-                        <button routerLink="/edit/{{tarjeta.id}}">Editar</button>
-                    </td> 
-                        <button (click)="eliminarTarjeta(tarjeta.id)">Eliminar</button>                                   
-                    <td>
-                        <i ></i>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+    <div>     
+        <div id="main-container">
+            <h3>LISTADO TARJETAS</h3>
+            <table class="table">
+                
+                    <thead>
+                        <tr>
+                            <th>Titular</th>
+                            <th>Numero de Tarjeta</th>
+                            <th>Fecha Expiracion</th>
+                            <th>Cvv</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tr *ngFor="let tarjeta of listTarjetas">
+                        <td>{{tarjeta.titular}}</td>
+                        <td>{{tarjeta.numeroTarjeta}}</td>
+                        <td>{{tarjeta.fechaExpiracion}}</td>
+                        <td>{{tarjeta.cvv}}</td>
+                        <td>
+                            <button routerLink="/edit/{{tarjeta.id}}">Editar</button>
+                        </td> 
+                        <td>
+                            <button (click)="eliminarTarjeta(tarjeta.id)">Eliminar</button> 
+                        </td>
+                                                             
+                    </tr>
+                
+            </table>
+        </div>
     </div>
     
   </body>
