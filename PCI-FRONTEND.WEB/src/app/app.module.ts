@@ -11,6 +11,9 @@ import { RouterModule } from '@angular/router';
 import { TarjetasComponent } from './components/tarjetas/tarjetas.component';
 import { EditComponent } from './components/edit/edit.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
+import { PruebaComponent } from './components/prueba/prueba.component';
+import { NextDirective } from './directives/next.directive';
+import { PrevDirective } from './directives/prev.directive';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import { CarouselComponent } from './components/carousel/carousel.component';
     CreateComponent,
     TarjetasComponent,
     EditComponent,
-    CarouselComponent
+    CarouselComponent,
+    PruebaComponent,
+    NextDirective,
+    PrevDirective
   ],
   imports: [
     BrowserModule,
@@ -30,7 +36,8 @@ import { CarouselComponent } from './components/carousel/carousel.component';
       {path:'create',component:CreateComponent},
       {path:'tarjetas',component:TarjetasComponent},
       {path:'edit/:id',component:EditComponent},
-      {path:'',component:CarouselComponent}
+      {path:'',component:CarouselComponent},
+      {path:'prueba',component:PruebaComponent}
     ])
   ],
   providers: [],
