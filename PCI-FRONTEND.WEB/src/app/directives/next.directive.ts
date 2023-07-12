@@ -12,7 +12,7 @@ export class NextDirective {
    @HostListener('click')
    nextFunc(){
     var elm= this.el.nativeElement.parentElement.parentElement.children[0];
-    var tarjeta = elm.getElementsByClassName("tarjeta");
+    var tarjeta = elm.getElementsByClassName("contenedor");
     console.log(tarjeta);
     elm.append(tarjeta[0]);
    }

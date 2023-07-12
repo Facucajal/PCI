@@ -6,33 +6,40 @@
     <title>Page Title</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel="stylesheet" href="prueba2.component.scss">
-    <script src='main.js'></script>
 </head>
 <body>
     <section class="product">
         <div class="container-fluid">
             <div class="slider-wrap">
                 <div class="slider-main" >
-                    <div class="tarjeta"*ngFor="let tarjeta of listTarjetas">
-                        <div class="numero">
-                            <p>Número Tarjeta1</p>
-                            <p>{{tarjeta?.numeroTarjeta}}</p>
-                        </div>
-                        <div class="footer">
-                            <div class="titular">
-                                <p>Nombre Tarjeta</p>
-                                <p >{{tarjeta?.titular}}</p>
+                    <div class="contenedor"*ngFor="let tarjeta of listTarjetas">
+                        <div class="tarjeta">
+                            <div class="logo">
+                                <img src="assets/img/bbva2.png" alt="logo">
                             </div>
-            
-                            <div class="expiracion">
-                                <p>Expiracion</p>
-                                <p>{{tarjeta?.fechaExpiracion}}</p>
+                            <img class="chip" src="assets/img/chip-tarjeta.png">
+                            <div class="numero">
+                                <p>{{tarjeta?.numeroTarjeta}}</p>
+                            </div>
+                            <div class="footer">
+                                <div>
+                                    <div class="fechas">
+                                        <p>desde:08/22</p>
+                                        <p>hasta: {{tarjeta?.fechaExpiracion}}</p>
+                                    </div>
+                                    <div class="titular">
+                                        <p class="titular">{{tarjeta?.titular}}</p>
+                                    </div> 
+                                </div>
+                                <div class="visa">
+                                    <img src="assets/img/visa.png">
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>    
                 <div class="button-area">
-                    <button type="button" class="prev" appPrev>Prev</button>
+                    <button type="button"    appPrev>Prev</button>
                     <button type="button" class="next" appNext>Next</button>
 
                 </div>

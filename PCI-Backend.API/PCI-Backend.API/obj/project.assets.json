@@ -3723,19 +3723,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Facundo\\.nuget\\packages\\": {}
+    "C:\\Users\\FCajal\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Facundo\\Documents\\PCI\\PCI-Backend.API\\PCI-Backend.API\\PCI-Backend.API.csproj",
+      "projectUniqueName": "C:\\Users\\FCajal\\Documents\\PCI\\PCI-Backend.API\\PCI-Backend.API\\PCI-Backend.API.csproj",
       "projectName": "PCI-Backend.API",
-      "projectPath": "C:\\Users\\Facundo\\Documents\\PCI\\PCI-Backend.API\\PCI-Backend.API\\PCI-Backend.API.csproj",
-      "packagesPath": "C:\\Users\\Facundo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Facundo\\Documents\\PCI\\PCI-Backend.API\\PCI-Backend.API\\obj\\",
+      "projectPath": "C:\\Users\\FCajal\\Documents\\PCI\\PCI-Backend.API\\PCI-Backend.API\\PCI-Backend.API.csproj",
+      "packagesPath": "C:\\Users\\FCajal\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\FCajal\\Documents\\PCI\\PCI-Backend.API\\PCI-Backend.API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Facundo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\FCajal\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
