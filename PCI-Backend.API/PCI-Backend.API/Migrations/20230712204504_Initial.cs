@@ -1,11 +1,12 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
 namespace PCI_Backend.API.Migrations
 {
     /// <inheritdoc />
-    public partial class v100 : Migration
+    public partial class Initial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -18,7 +19,7 @@ namespace PCI_Backend.API.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Titular = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     NumeroTarjeta = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    FechaExpiracion = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    FechaExpiracion = table.Column<DateTime>(type: "datetime2", nullable: false),
                     CVV = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>

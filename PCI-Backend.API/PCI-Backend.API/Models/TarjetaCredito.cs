@@ -10,7 +10,7 @@ namespace PCI_Backend.API.Models
         [Required]
         public String NumeroTarjeta { get; set; }
         [Required]
-        public string FechaExpiracion { get; set; }
+        public DateTime FechaExpiracion { get; set; }
         [Required]
         public String CVV { get; set; }
     }

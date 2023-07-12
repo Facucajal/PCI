@@ -6,7 +6,7 @@ import {Router,ActivatedRoute} from '@angular/router'
 @Component({
   selector: 'app-edit',
   templateUrl: './edit.component.html',
-  styleUrls: ['./edit.component.scss']
+  styleUrls: ['../create/create.component.scss']
 })
 export class EditComponent implements OnInit {
   listTarjetas: any[] = [];
@@ -23,7 +23,8 @@ export class EditComponent implements OnInit {
           {
             titular: ['', Validators.required],
             numeroTarjeta: ['', [Validators.required, Validators.maxLength(16),Validators.minLength(16)]],
-            fechaExpiracion: ['',[Validators.required, Validators.maxLength(5),Validators.minLength(5)]],
+            anio: ['',[Validators.required, Validators.maxLength(2),Validators.minLength(2)]],
+            mes: ['',[Validators.required, Validators.maxLength(2),Validators.minLength(2)]],
             cvv: ['',[Validators.required, Validators.maxLength(3),Validators.minLength(3)]]
           })
   };
@@ -49,7 +50,8 @@ export class EditComponent implements OnInit {
       this.form.patchValue({
         titular: tarjeta.titular,
         numeroTarjeta: tarjeta.numeroTarjeta,
-        fechaExpiracion: tarjeta.fechaExpiracion,
+        anio: tarjeta.fechaExpiracion.slice(0,4),
+        mes: tarjeta.fechaExpiracion.slice(5,7),
         cvv: tarjeta.cvv
       })
     })

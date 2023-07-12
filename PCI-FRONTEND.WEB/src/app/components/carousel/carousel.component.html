@@ -1,51 +1,50 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <title></title>
-    <link rel="stylesheet" hre="carousel.components.scss">
-  </head>
-  <body>
-        <div class="contenedor">
-            <section class="tarjeta" id="tarjeta">
-                <div class="delantera">
-                    <div class="logo-marca" id="logo-marca">
-                        <!-- <img src="img/logos/visa.png" alt=""> -->
-                    </div>
-                    <!--img src="img/chip-tarjeta.png" class="chip" alt=""-->
-                    <div class="datos">
-                        <div class="grupo" id="numero">
-                            <p class="label">Número Tarjeta</p>
-                            <p class="numero">{{tarjeta?.numeroTarjeta}}</p>
-                        </div>
-                        <div class="flexbox">
-                            <div class="grupo" id="nombre">
-                                <p class="label">Nombre Tarjeta</p>
-                                <p class="nombre">{{tarjeta?.titular}}</p>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+    <section class="product">
+        <div class="container-fluid">
+            <div class="slider-wrap">
+                <div class="slider-main" >
+                    <div class="contenedor"*ngFor="let tarjeta of listTarjetas">
+                        <div class="tarjeta">
+                            <div class="logo">
+                                <img src="assets/img/bbva2.png" alt="logo">
                             </div>
+                            <img class="chip" src="assets/img/chip-tarjeta.png">
+                            <div class="numero">
+                                <p>{{tarjeta.numeroTarjeta.slice(0,4)}}  {{tarjeta.numeroTarjeta.slice(4,8)}}  {{tarjeta.numeroTarjeta.slice(8,12)}}  {{tarjeta.numeroTarjeta.slice(12,16)}}</p>
+                            </div>
+                            <div class="footer">
+                                <div>
+                                    <div class="fechas">
+                                        <p>desde:08/22</p>
+                                        <p>hasta: {{tarjeta.fechaExpiracion.slice(5,7)}}/{{tarjeta.fechaExpiracion.slice(0,4)}}</p>
+                                    </div>
+                                    <div class="titular">
+                                        <p class="titular">{{tarjeta?.titular}}</p>
+                                    </div> 
+                                </div>
+                                <div class="visa">
+                                    <img src="assets/img/visa.png">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>    
+                <div class="button-area">
+                    <button type="button" class="prev"   appPrev>Prev</button>
+                    <button type="button" class="next" appNext>Next</button>
 
-                            <div class="grupo" id="expiracion">
-                                <p class="label">Expiracion</p>
-                                <p class="expiracion">{{tarjeta?.fechaExpiracion}}</p>
-                            </div>
-                        </div>
-                    </div>
                 </div>
-
-                <!--div class="trasera">
-                    <div class="barra-magnetica"></div>
-                    <div class="datos">
-                        <div class="grupo" id="firma">
-                            <p class="label">Firma</p>
-                            <div class="firma"><p></p></div>
-                        </div>
-                        <div class="grupo" id="ccv">
-                            <p class="label">CCV</p>
-                            <p class="ccv"></p>
-                        </div>
-                    </div>
-                    <p class="leyenda">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus exercitationem, voluptates illo.</p>
-                    <a href="#" class="link-banco">www.tubanco.com</a>
-                </div-->
-            </section>
+            </div>
         </div>
-  </body>
+
+    </section>
+</body>
 </html>

@@ -20,8 +20,8 @@
                     </thead>
                     <tr *ngFor="let tarjeta of listTarjetas">
                         <td>{{tarjeta.titular}}</td>
-                        <td>{{tarjeta.numeroTarjeta}}</td>
-                        <td>{{tarjeta.fechaExpiracion}}</td>
+                        <td >{{tarjeta.numeroTarjeta.slice(0,4)}}  {{tarjeta.numeroTarjeta.slice(4,8)}}  {{tarjeta.numeroTarjeta.slice(8,12)}}  {{tarjeta.numeroTarjeta.slice(12,16)}}</td>
+                        <td>{{tarjeta.fechaExpiracion.slice(5,7)}}/{{tarjeta.fechaExpiracion.slice(0,4)}}</td>
                         <td>{{tarjeta.cvv}}</td>
                         <td>
                             <button routerLink="/edit/{{tarjeta.id}}">Editar</button>

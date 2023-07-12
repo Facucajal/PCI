@@ -23,7 +23,8 @@ export class CreateComponent implements OnInit {
           {
             titular: ['', Validators.required],
             numeroTarjeta: ['', [Validators.required, Validators.maxLength(16),Validators.minLength(16)]],
-            fechaExpiracion: ['',[Validators.required, Validators.maxLength(5),Validators.minLength(5)]],
+            anio: ['',[Validators.required, Validators.maxLength(2),Validators.minLength(2)]],
+            mes: ['',[Validators.required, Validators.maxLength(2),Validators.minLength(2)]],
             cvv: ['',[Validators.required, Validators.maxLength(3),Validators.minLength(3)]]
           })
   };
@@ -44,14 +45,16 @@ export class CreateComponent implements OnInit {
   }
 
   guardarTarjeta(){
-
+    
     const tarjeta: any ={
       titular: this.form.get('titular')?.value,
       numeroTarjeta: this.form.get('numeroTarjeta')?.value,
-      fechaExpiracion: this.form.get('fechaExpiracion')?.value,
+      fechaExpiracion: (this.form.get('anio')?.value +"-"+ this.form.get('mes')?.value+"-"+"01"),
       cvv: this.form.get('cvv')?.value,
     }
 
+    console.log(tarjeta);
+    
     this._tarjetaService.saveTarjeta(tarjeta).subscribe(data => {
 
       this.router.navigate(['/tarjetas'])

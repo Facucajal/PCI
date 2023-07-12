@@ -1,70 +1,68 @@
-body{
-  display: flex;
-  padding: 0px 0px;
-  min-height: 100vh;
-  align-items: center;
-  justify-content: center;
-  flex-direction:column;
+.contenedor {
+	width: 90%; //ancho
+	max-width: 1000px;
+	padding: 40px 20px;
+	margin: auto;//centrar horizontal
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
 
-
-  .wrapper{
-    position: relative;
-    max-width: 1090px;
-  
-    .carousel{
-      display: flex;
-      white-space: nowrap;
-      overflow: hidden;
-  
-  
-      .tarjeta {
-        background-color: blue;
-        width: 350px;
-        height: 200px;
-        margin-left: 25px;
-        margin-top: 25px;
-        object-fit: cover;
-  
-        .footer{
-          display: flex;
-          background-color: aqua;
-          margin-top: 50px;
-  
-          .expiracion{
-            margin-left: 160px;
-          }
-        }
-      }  
-    }
+.tarjeta {
+	width: 100%;
+	max-width: 550px;
+	position: relative;
+	color: #fff;
+	//transition: .3s ease all; //girar
+	//transform: rotateY(0deg); //rotacion fija en y
+	//transform-style: preserve-3d; //permite girar
+	cursor: pointer;
+	z-index: 1; //nro de capa
     
-    .flecha{
-      top: 50%;
-      background-color: white;
-      height: 20px;
-      width: 20px;
-      position: absolute;
-      cursor: pointer;
-      text-align: center;
-      line-height: 46px;
-      transform: translateY(-50%);
-      border-radius: 50%;
-    }
-    .flecha:first-child{
-      left: 0px;
-    }   
-    .flecha:last-child{
-      right: 2px;
-    }
-  }
 }
 
 
+.tarjeta:focus {
+	transform: rotateY(180deg);
+}
+
+.tarjeta > div {
+	padding: 30px;
+	border-radius: 15px;
+	min-height: 315px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	box-shadow: 0 10px 10px 0 rgba(90,116,148,0.3); //sombra
+}
 
 
+.tarjeta .delantera {
+	width: 100%;
+	//background: url(../img/bg-tarjeta/bg-tarjeta-02.jpg);
+	background-size: cover;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+}
 
 
+.delantera .grupo .label {
+	font-size: 16px;
+	color: #7d8994;
+	margin-bottom: 5px;
+}
 
 
+.delantera .grupo .numero,
+.delantera .grupo .nombre,
+.delantera .grupo .expiracion {
+	color: #fff;
+	font-size: 22px;
+	text-transform: uppercase;
+}
 
-
-
+.delantera .flexbox {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 20px;
+}

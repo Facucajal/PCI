@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { TarjetaService } from 'src/app/services/tarjeta.service';
-import { NextDirective } from 'src/app/directives/next.directive';
 
 @Component({
   selector: 'app-prueba',
-  templateUrl: './prueba2.component.html',
-  styleUrls: ['./prueba2.component.scss']
+  templateUrl: './prueba.component.html',
+  styleUrls: ['./prueba.component.scss']
 })
 export class PruebaComponent {
   listTarjetas: any[] = [];
