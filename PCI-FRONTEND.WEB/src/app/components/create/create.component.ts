@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { TarjetaService } from 'src/app/services/tarjeta.service';
 import {Router} from '@angular/router'
 import { Base } from '../base';

@@ -1,5 +1,5 @@
 .contenedor{
-  width: 300px;
+  width: 350px;
   height: 200px;
   margin-right: 50px;
   margin-left: 50px;
@@ -9,7 +9,7 @@
       position: relative;
       max-width: 100%;
       max-height: 100%;
-      padding: 7px;
+      padding: 10px;
       display: flex;
       background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
       border-radius: 15px;
@@ -43,7 +43,7 @@
       .numero{
           color: white;
           font-size: 15px;
-          max-height: 32px;
+          min-height: 47px;
       }
 
       .footer{
@@ -70,7 +70,8 @@
               }
           }
           .titular{
-              max-height: 15px;
+
+              min-height: 10px;
           }
       }
   }

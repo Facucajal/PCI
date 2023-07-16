@@ -13,16 +13,17 @@
             </div>
             <img class="chip" src="assets/img/chip-tarjeta.png">
             <div class="numero">
-                <p>**** **** **** ****</p>
+                <p>{{ form.get('numeroTarjeta').value.slice(0,4)}}    {{ form.get('numeroTarjeta').value.slice(4,8)}}
+                      {{ form.get('numeroTarjeta').value.slice(8,12)}}    {{ form.get('numeroTarjeta').value.slice(12,16)}}</p>
             </div>
             <div class="footer">
                 <div>
                     <div class="fechas">
-                        <p>desde:08/22</p>
-                        <p>hasta:****</p>
+                        <p>desde:{{ form.get('mesIni').value }}/{{ form.get('anioIni').value }}</p>
+                        <p>hasta:{{ form.get('mesExp').value }}/{{ form.get('anioExp').value }}</p>
                     </div>
                     <div class="titular">
-                        <p class="titular">pepe</p>
+                        <p class="titular">{{ form.get('titular').value }}</p>
                     </div> 
                 </div>
                 <div class="visa">
@@ -39,25 +40,8 @@
             <input class="dato" formControlName="numeroTarjeta" type="text" placeholder="Numero de Tarjeta">
             <label>Fecha Inicio:</label>
             <div>
-              <select class="fecha" formControlName="mesExp" placeholder="mes">
-                <option value="01">Enero</option>
-                <option value="02">Febrero</option>
-                <option value="03">Marzo</option>
-                <option value="04">Abril</option>
-                <option value="05">Mayo</option>
-                <option value="06">Junio</option>
-                <option value="07">Julio</option>
-                <option value="08">Agosto</option>
-                <option value="09">Septiembre</option>
-                <option value="10">Octubre</option>
-                <option value="11">Noviembre</option>
-                <option value="12">Diciembre</option>
-              </select>
-              <input class="fecha" formControlName="anioExp" type="text" placeholder="Anio">
-            </div>
-            <label>Fecha Fin:</label>
-            <div>
-              <select class="fecha" formControlName="mesIni" placeholder="mes">
+              <select class="fecha" formControlName="mesIni">
+                <option disabled selected value="">Mes</option>
                 <option value="01">Enero</option>
                 <option value="02">Febrero</option>
                 <option value="03">Marzo</option>
@@ -72,6 +56,25 @@
                 <option value="12">Diciembre</option>
               </select>
               <input class="fecha" formControlName="anioIni" type="text" placeholder="Anio">
+            </div>
+            <label>Fecha Fin:</label>
+            <div>
+              <select class="fecha" formControlName="mesExp">
+                <option disabled selected value="">Mes</option>
+                <option value="01">Enero</option>
+                <option value="02">Febrero</option>
+                <option value="03">Marzo</option>
+                <option value="04">Abril</option>
+                <option value="05">Mayo</option>
+                <option value="06">Junio</option>
+                <option value="07">Julio</option>
+                <option value="08">Agosto</option>
+                <option value="09">Septiembre</option>
+                <option value="10">Octubre</option>
+                <option value="11">Noviembre</option>
+                <option value="12">Diciembre</option>
+              </select>
+              <input class="fecha" formControlName="anioExp" type="text" placeholder="Anio">
             </div>
             <input class="dato" formControlName="cvv" type="text" placeholder="cvv">
             <button class="boton" type="submit">Guardar</button>

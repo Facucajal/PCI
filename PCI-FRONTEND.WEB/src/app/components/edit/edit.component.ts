@@ -32,8 +32,8 @@ export class EditComponent extends Base {
       this.form.patchValue({
         titular: tarjeta.titular,
         numeroTarjeta: tarjeta.numeroTarjeta,
-        anioIni: tarjeta.fechaExpiracion.slice(0,4),
-        mesIni: tarjeta.fechaExpiracion.slice(5,7),
+        anioIni: tarjeta.fechaInicio.slice(0,4),
+        mesIni: tarjeta.fechaInicio.slice(5,7),
         anioExp: tarjeta.fechaExpiracion.slice(0,4),
         mesExp: tarjeta.fechaExpiracion.slice(5,7),
         cvv: tarjeta.cvv

@@ -16,7 +16,7 @@ export abstract class Base {
     protected activeRoute: ActivatedRoute
     ) {
       this.form = this.fb.group({
-        titular: ['', /*Validators.required*/],
+        titular: ['', Validators.required],
         numeroTarjeta: ['', /*[Validators.required, Validators.maxLength(16),Validators.minLength(16)]*/],
         anioIni: ['',[Validators.required, Validators.maxLength(2),Validators.minLength(2)]],
         mesIni: ['',[Validators.required, Validators.maxLength(2),Validators.minLength(2)]],
