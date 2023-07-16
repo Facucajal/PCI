@@ -62,6 +62,25 @@
                   max-width: 70px;
               }
           }
+          .master{
+            text-align: right;
+              max-height: 60px;
+              margin-right: 10px;
+              img{
+                  object-fit: cover;
+                  max-width: 55px;
+                  min-height: 40px;
+              }
+          }
+          .AmericanExp{
+            text-align: right;
+              margin-right: 18px;
+              img{
+                  object-fit: cover;
+                  max-width: 50px;
+                  max-height: 45px;
+              }
+          }
           .fechas{
               display: flex;
               max-height: 20px;

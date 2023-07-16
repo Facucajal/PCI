@@ -8,7 +8,7 @@
       <div class="contenedor">
         <div class="tarjeta">
           <div class="logo">
-              <img src="assets/img/bbva2.png" alt="logo">
+              <img src="assets/img/bbva.png" alt="logo">
           </div>
           <img class="chip" src="assets/img/chip-tarjeta.png">
           <div class="numero">
@@ -25,9 +25,19 @@
                   <p class="titular">{{ form.get('titular').value }}</p>
               </div> 
             </div>
-            <div class="visa">
-                <img src="assets/img/visa.png">
+            <div *ngIf="form.get('numeroTarjeta').value[0]==4; else elseBlock1" class="visa">
+              <img src="assets/img/visa.png">
+          </div>
+          <ng-template #elseBlock1>
+            <div *ngIf="form.get('numeroTarjeta').value[0]==5; else elseBlock2" class="master">
+              <img src="assets/img/mastercard-logo.png">
             </div>
+            <ng-template #elseBlock2>
+              <div *ngIf="form.get('numeroTarjeta').value[0]==3" class="AmericanExp">
+                <img src="assets/img/American-Express.png">
+              </div>
+            </ng-template>
+          </ng-template>
           </div>
         </div>
       </div>
