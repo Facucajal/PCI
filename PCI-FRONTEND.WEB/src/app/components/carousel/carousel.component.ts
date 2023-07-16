@@ -1,26 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { TarjetaService } from 'src/app/services/tarjeta.service';
+import{Base} from 'src/app/components/base'
 
 @Component({
   selector: 'app-carousel',
   templateUrl: './carousel.component.html',
   styleUrls: ['./carousel.component.scss']
 })
-export class CarouselComponent {
-  listTarjetas: any[] = [];
-  form: FormGroup;
-  tarjeta : any;
-
-  constructor(private fb: FormBuilder,
-    private _tarjetaService: TarjetaService) {
-      this.form = this.fb.group({
-        titular: ['', Validators.required],
-        numeroTarjeta: ['', [Validators.required, Validators.maxLength(16),Validators.minLength(16)]],
-        fechaExpiracion: ['',[Validators.required, Validators.maxLength(5),Validators.minLength(5)]],
-        cvv: ['',[Validators.required, Validators.maxLength(3),Validators.minLength(3)]]
-      })
-  };
+export class CarouselComponent extends Base{
 
   ngOnInit(): void {
     this.obtenerTarjetas()

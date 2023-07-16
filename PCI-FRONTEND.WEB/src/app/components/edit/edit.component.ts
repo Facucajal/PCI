@@ -2,32 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { TarjetaService } from 'src/app/services/tarjeta.service';
 import {Router,ActivatedRoute} from '@angular/router'
+import { Base } from '../base';
 
 @Component({
   selector: 'app-edit',
   templateUrl: './edit.component.html',
   styleUrls: ['../create/create.component.scss']
 })
-export class EditComponent implements OnInit {
-  listTarjetas: any[] = [];
-  form: FormGroup;
-
-  constructor(
-    private fb: FormBuilder,
-    private _tarjetaService: TarjetaService,
-    public router: Router,
-    private activeRoute: ActivatedRoute
-    ) 
-    {
-        this.form = this.fb.group(
-          {
-            titular: ['', Validators.required],
-            numeroTarjeta: ['', [Validators.required, Validators.maxLength(16),Validators.minLength(16)]],
-            anio: ['',[Validators.required, Validators.maxLength(2),Validators.minLength(2)]],
-            mes: ['',[Validators.required, Validators.maxLength(2),Validators.minLength(2)]],
-            cvv: ['',[Validators.required, Validators.maxLength(3),Validators.minLength(3)]]
-          })
-  };
+export class EditComponent extends Base {
 
 
   ngOnInit(): void {
@@ -50,8 +32,10 @@ export class EditComponent implements OnInit {
       this.form.patchValue({
         titular: tarjeta.titular,
         numeroTarjeta: tarjeta.numeroTarjeta,
-        anio: tarjeta.fechaExpiracion.slice(0,4),
-        mes: tarjeta.fechaExpiracion.slice(5,7),
+        anioIni: tarjeta.fechaExpiracion.slice(0,4),
+        mesIni: tarjeta.fechaExpiracion.slice(5,7),
+        anioExp: tarjeta.fechaExpiracion.slice(0,4),
+        mesExp: tarjeta.fechaExpiracion.slice(5,7),
         cvv: tarjeta.cvv
       })
     })
@@ -62,8 +46,9 @@ export class EditComponent implements OnInit {
     const tarjeta: any ={
       titular: this.form.get('titular')?.value,
       numeroTarjeta: this.form.get('numeroTarjeta')?.value,
-      fechaExpiracion: (this.form.get('anio')?.value +"-"+ this.form.get('mes')?.value+"-"+"01"),
+      fechaExpiracion: (this.form.get('anioExp')?.value +"-"+ this.form.get('mesExp')?.value+"-"+"01"),
       cvv: this.form.get('cvv')?.value,
+      fechaInicio: (this.form.get('anioIni')?.value +"-"+ this.form.get('mesIni')?.value+"-"+"01")
     }
     tarjeta.id = id;
     this._tarjetaService.updateTarjeta(id,tarjeta).subscribe(data => {

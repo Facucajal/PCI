@@ -13,5 +13,6 @@ namespace PCI_Backend.API.Models
         public DateTime FechaExpiracion { get; set; }
         [Required]
         public String CVV { get; set; }
+        public DateTime FechaInicio { get; set; }
     }
 }

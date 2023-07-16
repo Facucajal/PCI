@@ -17,6 +17,7 @@
                         <tr>
                             <th>Titular</th>
                             <th>Numero de Tarjeta</th>
+                            <th>Fecha Inicio</th>
                             <th>Fecha Expiracion</th>
                             <th>Cvv</th>
                             <th></th>
@@ -26,6 +27,7 @@
                     <tr *ngFor="let tarjeta of listTarjetas">
                         <td>{{tarjeta.titular}}</td>
                         <td >{{tarjeta.numeroTarjeta.slice(0,4)}}  {{tarjeta.numeroTarjeta.slice(4,8)}}  {{tarjeta.numeroTarjeta.slice(8,12)}}  {{tarjeta.numeroTarjeta.slice(12,16)}}</td>
+                        <td>{{tarjeta.fechaInicio.slice(5,7)}}/{{tarjeta.fechaInicio.slice(0,4)}}</td>
                         <td>{{tarjeta.fechaExpiracion.slice(5,7)}}/{{tarjeta.fechaExpiracion.slice(0,4)}}</td>
                         <td>{{tarjeta.cvv}}</td>
                         <td>

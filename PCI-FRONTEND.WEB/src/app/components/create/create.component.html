@@ -5,33 +5,78 @@
   </head>
   <body>
     <div>
-        <section class="formulario">
-          <h4>Formulario</h4>
-          
-          <input class="dato" formControlName="titular" type="text" placeholder="Titular">
-          <input class="dato" formControlName="numeroTarjeta" type="text" placeholder="Numero de Tarjeta">
-          <div class="vencimiento">
-            <select class="fecha" formControlName="mes" placeholder="mes">
-              <option value="01">Enero</option>
-              <option value="02">Febrero</option>
-              <option value="03">Marzo</option>
-              <option value="04">Abril</option>
-              <option value="05">Mayo</option>
-              <option value="06">Junio</option>
-              <option value="07">Julio</option>
-              <option value="08">Agosto</option>
-              <option value="09">Septiembre</option>
-              <option value="10">Octubre</option>
-              <option value="11">Noviembre</option>
-              <option value="12">Diciembre</option>
-            </select>
-            <input class="fecha" formControlName="anio" type="text" placeholder="Anio">
-          </div>
-          <input class="dato" formControlName="cvv" type="password" placeholder="cvv">
-          <button class="boton" type="submit">Guardar</button>
-        </section>
-    </div>
-    <div>
+
+      <div class="contenedor">
+        <div class="tarjeta">
+            <div class="logo">
+                <img src="assets/img/bbva2.png" alt="logo">
+            </div>
+            <img class="chip" src="assets/img/chip-tarjeta.png">
+            <div class="numero">
+                <p>**** **** **** ****</p>
+            </div>
+            <div class="footer">
+                <div>
+                    <div class="fechas">
+                        <p>desde:08/22</p>
+                        <p>hasta:****</p>
+                    </div>
+                    <div class="titular">
+                        <p class="titular">pepe</p>
+                    </div> 
+                </div>
+                <div class="visa">
+                    <img src="assets/img/visa.png">
+                </div>
+            </div>
+        </div>
+      </div>
+
+      <form [formGroup]="form" (ngSubmit)="guardarTarjeta()">
+          <section class="formulario" >
+            <h4>Formulario</h4>
+            <input class="dato" formControlName="titular" type="text" placeholder="Titular">
+            <input class="dato" formControlName="numeroTarjeta" type="text" placeholder="Numero de Tarjeta">
+            <label>Fecha Inicio:</label>
+            <div>
+              <select class="fecha" formControlName="mesExp" placeholder="mes">
+                <option value="01">Enero</option>
+                <option value="02">Febrero</option>
+                <option value="03">Marzo</option>
+                <option value="04">Abril</option>
+                <option value="05">Mayo</option>
+                <option value="06">Junio</option>
+                <option value="07">Julio</option>
+                <option value="08">Agosto</option>
+                <option value="09">Septiembre</option>
+                <option value="10">Octubre</option>
+                <option value="11">Noviembre</option>
+                <option value="12">Diciembre</option>
+              </select>
+              <input class="fecha" formControlName="anioExp" type="text" placeholder="Anio">
+            </div>
+            <label>Fecha Fin:</label>
+            <div>
+              <select class="fecha" formControlName="mesIni" placeholder="mes">
+                <option value="01">Enero</option>
+                <option value="02">Febrero</option>
+                <option value="03">Marzo</option>
+                <option value="04">Abril</option>
+                <option value="05">Mayo</option>
+                <option value="06">Junio</option>
+                <option value="07">Julio</option>
+                <option value="08">Agosto</option>
+                <option value="09">Septiembre</option>
+                <option value="10">Octubre</option>
+                <option value="11">Noviembre</option>
+                <option value="12">Diciembre</option>
+              </select>
+              <input class="fecha" formControlName="anioIni" type="text" placeholder="Anio">
+            </div>
+            <input class="dato" formControlName="cvv" type="text" placeholder="cvv">
+            <button class="boton" type="submit">Guardar</button>
+          </section>
+        </form>
     </div>
   </body>
 </html>

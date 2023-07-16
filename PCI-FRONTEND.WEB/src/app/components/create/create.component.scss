@@ -1,10 +1,89 @@
+.contenedor{
+  width: 300px;
+  height: 200px;
+  margin-right: 50px;
+  margin-left: 50px;
+  margin: auto;
+  margin-top: 50px;
+  .tarjeta {
+      position: relative;
+      max-width: 100%;
+      max-height: 100%;
+      padding: 7px;
+      display: flex;
+      background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+      border-radius: 15px;
+      flex-direction: column;
+      color: white;
+      font-size: 9px;
+      text-transform: uppercase;
+      
+      .logo{
+          text-align: left;
+          min-height: 40px;
+          margin-top: 10px;
+          margin-left: 10px;
+          img{
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              max-width: 70px;
+          }
+      }
+
+      .chip{
+          width: 100%;
+          height: 100%;
+          max-width: 30px;
+          max-height: 30px;
+          margin-top: 5px;
+          margin-left: 15px;
+      }
+
+      .numero{
+          color: white;
+          font-size: 15px;
+          max-height: 32px;
+      }
+
+      .footer{
+          max-width: 100%;
+          max-height: 100%;
+          display: flex;
+          justify-content: space-between;
+          .visa{
+              text-align: right;
+              min-height: 40px;
+              margin-right: 10px;
+              img{
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  max-width: 70px;
+              }
+          }
+          .fechas{
+              display: flex;
+              max-height: 20px;
+              p{
+                  margin-right: 10px;
+              }
+          }
+          .titular{
+              max-height: 15px;
+          }
+      }
+  }
+}
+
+
 .formulario{
   box-sizing: border-box;
   width: 400px;
   background: #24303c;
   padding: 30px;
   margin: auto;
-  margin-top: 100px;
+  margin-top: 15px;
   border-radius: 4px;
   font-family: 'calibri';
   color: white;
@@ -50,6 +129,7 @@
     color: white;
     margin: 16px 0px;
     font-size: 16px;
+    cursor: pointer;
   }
 
 }
