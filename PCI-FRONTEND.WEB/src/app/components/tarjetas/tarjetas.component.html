@@ -6,8 +6,13 @@
     <div>     
         <div id="main-container">
             <h3>LISTADO TARJETAS</h3>
+            <div class="titular">
+                <input [(ngModel)]="filtroTitular" type="text" placeholder="Titular">
+                <button (click)="filtrarTarjetas()">Filtrar</button>
+                <button (click)="obtenerTarjetas()">Limpiar</button>
+            </div>
+            
             <table class="table">
-                
                     <thead>
                         <tr>
                             <th>Titular</th>

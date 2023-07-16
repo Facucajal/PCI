@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { TarjetaCreditoComponent } from './components/tarjeta-credito/tarjeta-credito.component';
@@ -31,6 +32,7 @@ import { PrevDirective } from './directives/prev.directive';
     BrowserModule,
     ReactiveFormsModule,
     HttpClientModule,
+    FormsModule,
     //Toma arreglo de objetos que definen las rutas
     RouterModule.forRoot([
       {path:'create',component:CreateComponent},

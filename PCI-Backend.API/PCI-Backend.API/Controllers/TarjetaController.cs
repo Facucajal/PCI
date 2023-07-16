@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Any;
 using PCI_Backend.API.Models;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -110,5 +111,22 @@ namespace PCI_Backend.API.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
+        [HttpGet("titular/{titular}")]
+        public async Task<IActionResult> GetTitular(String titular)
+        {
+            try
+            {
+                //var listTarjetas = await _context.TarjetaCredito.Where(t => t.Titular == titular).ToListAsync();
+                var listTarjetas = await _context.TarjetaCredito.Where(t => EF.Functions.Like(t.Titular, titular + "%")).ToListAsync();
+                return Ok(listTarjetas);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+
     }
 }

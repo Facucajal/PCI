@@ -62,7 +62,7 @@ export class EditComponent implements OnInit {
     const tarjeta: any ={
       titular: this.form.get('titular')?.value,
       numeroTarjeta: this.form.get('numeroTarjeta')?.value,
-      fechaExpiracion: this.form.get('fechaExpiracion')?.value,
+      fechaExpiracion: (this.form.get('anio')?.value +"-"+ this.form.get('mes')?.value+"-"+"01"),
       cvv: this.form.get('cvv')?.value,
     }
     tarjeta.id = id;

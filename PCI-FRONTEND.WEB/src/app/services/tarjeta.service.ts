@@ -31,4 +31,7 @@ export class TarjetaService {
   updateTarjeta(id: number, tarjeta: any): Observable <any> {
     return this.http.put(this.myAppUrl + this.myApiUrl + id, tarjeta);
   }
+  getListTarjetasTitular(titular:String): Observable <any> {
+    return this.http.get(this.myAppUrl + this.myApiUrl + "titular/" + titular);
+  }
 }

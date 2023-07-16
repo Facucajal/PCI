@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { TarjetaService } from 'src/app/services/tarjeta.service';
+import {Router} from '@angular/router'
 
 @Component({
   selector: 'app-tarjetas',
@@ -10,9 +11,11 @@ import { TarjetaService } from 'src/app/services/tarjeta.service';
 export class TarjetasComponent implements OnInit{
   listTarjetas: any[] = [];
   form: FormGroup;
+  filtroTitular: String;
 
   constructor(private fb: FormBuilder,
-    private _tarjetaService: TarjetaService) {
+    private _tarjetaService: TarjetaService,
+    public router: Router) {
       this.form = this.fb.group({
         titular: ['', Validators.required],
         numeroTarjeta: ['', [Validators.required, Validators.maxLength(16),Validators.minLength(16)]],
@@ -42,8 +45,17 @@ export class TarjetasComponent implements OnInit{
       this.obtenerTarjetas();
     }, error => {
       console.log(error);
+    }) 
+  }
+
+  filtrarTarjetas(){
+    //Me suscribo al observable
+    this._tarjetaService.getListTarjetasTitular(this.filtroTitular).subscribe(data => {
+      console.log(data);
+      this.listTarjetas = data;
+    }, error => {
+      console.log(error);
     })
-    
   }
   
 }
