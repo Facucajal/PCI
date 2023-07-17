@@ -11,7 +11,6 @@ import { Base } from '../base';
 })
 export class TarjetasComponent extends Base{
   filtroTitular: String;
-
   
   ngOnInit(): void {
     this.obtenerTarjetas();

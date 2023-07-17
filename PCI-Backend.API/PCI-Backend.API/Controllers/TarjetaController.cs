@@ -118,7 +118,7 @@ namespace PCI_Backend.API.Controllers
             try
             {
                 //var listTarjetas = await _context.TarjetaCredito.Where(t => t.Titular == titular).ToListAsync();
-                var listTarjetas = await _context.TarjetaCredito.Where(t => EF.Functions.Like(t.Titular, titular + "%")).ToListAsync();
+                var listTarjetas = await _context.TarjetaCredito.Where(t => EF.Functions.Like(t.titular, titular + "%")).ToListAsync();
                 return Ok(listTarjetas);
             }
             catch (Exception ex)

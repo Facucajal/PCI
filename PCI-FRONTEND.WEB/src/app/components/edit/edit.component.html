@@ -65,7 +65,7 @@
               </select>
               <input class="fecha" formControlName="anioIni" type="text" placeholder="Anio">
             </div>
-            <label>Fecha Fin:</label>
+            <label>Fecha Expiracion:</label>
             <div>
               <select class="fecha" formControlName="mesExp" placeholder="mes">
                 <option value="01">Enero</option>
@@ -84,6 +84,13 @@
               <input class="fecha" formControlName="anioExp" type="text" placeholder="Anio">
             </div>
             <input class="dato" formControlName="cvv" type="text" placeholder="cvv">
+            <select class="dato" formControlName="categoria">
+              <option disabled selected value="">Categoria</option>
+              <option value=0>Clasica</option>
+              <option value=1>Oro</option>
+              <option value=2>Platino</option>
+              <option value=3>Black</option>
+            </select>
             <button class="boton" type="submit">Guardar</button>
           </section>
         </form>

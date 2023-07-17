@@ -7,7 +7,10 @@
     <div>
 
       <div class="contenedor">
-        <div class="tarjeta">
+        <div [class.tarjeta-Clasica]="form.get('categoria').value==0"
+              [class.tarjeta-Oro]="form.get('categoria').value==1"
+              [class.tarjeta-Platino]="form.get('categoria').value==2"
+              [class.tarjeta-Black]="form.get('categoria').value==3">
             <div class="logo">
                 <img src="assets/img/bbva.png" alt="logo">
             </div>
@@ -67,7 +70,7 @@
               </select>
               <input class="fecha" formControlName="anioIni" type="text" placeholder="Anio">
             </div>
-            <label>Fecha Fin:</label>
+            <label>Fecha Expiracion:</label>
             <div>
               <select class="fecha" formControlName="mesExp">
                 <option disabled selected value="">Mes</option>
@@ -87,6 +90,14 @@
               <input class="fecha" formControlName="anioExp" type="text" placeholder="Anio">
             </div>
             <input class="dato" formControlName="cvv" type="text" placeholder="cvv">
+            <select class="dato" formControlName="categoria">
+              <option disabled selected value="">Categoria</option>
+              <option value=0>Clasica</option>
+              <option value=1>Oro</option>
+              <option value=2>Platino</option>
+              <option value=3>Black</option>
+            </select>
+
             <button class="boton" type="submit">Guardar</button>
           </section>
         </form>

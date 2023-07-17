@@ -6,13 +6,16 @@ namespace PCI_Backend.API.Models
     {
         public int id { get; set; }
         [Required]
-        public String Titular { get; set; }
+        public String titular { get; set; }
         [Required]
-        public String NumeroTarjeta { get; set; }
+        public String numeroTarjeta { get; set; }
         [Required]
-        public DateTime FechaExpiracion { get; set; }
+        public DateTime fechaExpiracion { get; set; }
         [Required]
-        public String CVV { get; set; }
-        public DateTime FechaInicio { get; set; }
+        public String cvv { get; set; }
+        public DateTime fechaInicio { get; set; }
+
+        public Categoria categoria { get; set; }
+
     }
 }

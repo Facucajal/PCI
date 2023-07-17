@@ -19,7 +19,7 @@
                             <th>Numero de Tarjeta</th>
                             <th>Fecha Inicio</th>
                             <th>Fecha Expiracion</th>
-                            <th>Cvv</th>
+                            <th>Categoria</th>
                             <th></th>
                             <th></th>
                         </tr>
@@ -29,7 +29,17 @@
                         <td >{{tarjeta.numeroTarjeta.slice(0,4)}}  {{tarjeta.numeroTarjeta.slice(4,8)}}  {{tarjeta.numeroTarjeta.slice(8,12)}}  {{tarjeta.numeroTarjeta.slice(12,16)}}</td>
                         <td>{{tarjeta.fechaInicio.slice(5,7)}}/{{tarjeta.fechaInicio.slice(0,4)}}</td>
                         <td>{{tarjeta.fechaExpiracion.slice(5,7)}}/{{tarjeta.fechaExpiracion.slice(0,4)}}</td>
-                        <td>{{tarjeta.cvv}}</td>
+                        <td *ngIf="tarjeta.categoria==0;else elseBlock1">Clasica</td>
+                        <ng-template #elseBlock1>
+                            <td *ngIf="tarjeta.categoria==1;else elseBlock2">Oro</td>
+                            <ng-template #elseBlock2>
+                                <td *ngIf="tarjeta.categoria==2;else elseBlock3">Platino</td>
+                                <ng-template #elseBlock3>
+                                    <td *ngIf="tarjeta.categoria==3">Black</td>
+                                </ng-template>
+                            </ng-template>
+                        </ng-template>
+                            
                         <td>
                             <button routerLink="/edit/{{tarjeta.id}}">Editar</button>
                         </td> 

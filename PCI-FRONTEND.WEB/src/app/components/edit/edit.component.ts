@@ -36,7 +36,8 @@ export class EditComponent extends Base {
         mesIni: tarjeta.fechaInicio.slice(5,7),
         anioExp: tarjeta.fechaExpiracion.slice(0,4),
         mesExp: tarjeta.fechaExpiracion.slice(5,7),
-        cvv: tarjeta.cvv
+        cvv: tarjeta.cvv,
+        categoria: tarjeta.categoria
       })
     })
   }
@@ -48,8 +49,10 @@ export class EditComponent extends Base {
       numeroTarjeta: this.form.get('numeroTarjeta')?.value,
       fechaExpiracion: (this.form.get('anioExp')?.value +"-"+ this.form.get('mesExp')?.value+"-"+"01"),
       cvv: this.form.get('cvv')?.value,
-      fechaInicio: (this.form.get('anioIni')?.value +"-"+ this.form.get('mesIni')?.value+"-"+"01")
+      fechaInicio: (this.form.get('anioIni')?.value +"-"+ this.form.get('mesIni')?.value+"-"+"01"),
+      categoria: +this.form.get('categoria')?.value
     }
+    console.log(tarjeta);
     tarjeta.id = id;
     this._tarjetaService.updateTarjeta(id,tarjeta).subscribe(data => {
       this.form.reset();
