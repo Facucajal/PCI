@@ -6,7 +6,10 @@
   <body>
     <div>
       <div class="contenedor">
-        <div class="tarjeta">
+        <div [class.tarjeta-Clasica]="form.get('categoria').value==0"
+              [class.tarjeta-Oro]="form.get('categoria').value==1"
+              [class.tarjeta-Platino]="form.get('categoria').value==2"
+              [class.tarjeta-Black]="form.get('categoria').value==3">
           <div class="logo">
               <img src="assets/img/bbva.png" alt="logo">
           </div>

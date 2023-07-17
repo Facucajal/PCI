@@ -95,7 +95,8 @@
   }
   .tarjeta-Clasica{
     @extend .tarjeta-base;
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+    background: rgb(251,251,251);
+background: linear-gradient(203deg, rgba(251,251,251,1) 5%, rgba(255,9,9,1) 92%);
   }
   .tarjeta-Oro{
     @extend .tarjeta-base;
@@ -105,8 +106,8 @@
   }
   .tarjeta-Platino{
     @extend .tarjeta-base;
-    background: rgb(118,118,118);
-    background: linear-gradient(90deg, rgba(118,118,118,1) 0%, rgba(145,141,125,1) 51%, rgba(203,191,191,1) 100%);
+    background: rgb(56,54,54);
+  background: linear-gradient(30deg, rgba(56,54,54,1) 0%, rgba(229,235,255,1) 38%, rgba(77,79,87,1) 92%, rgba(50,49,49,1) 100%);
     color: #000;
   }
 

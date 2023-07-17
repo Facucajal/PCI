@@ -9,7 +9,7 @@ import { Base } from '../base';
   styleUrls: ['./prueba.component.scss']
 })
 export class PruebaComponent extends Base {
-
+  count = 0;
 
   ngOnInit(): void {
     this.obtenerTarjetas()
@@ -26,4 +26,24 @@ export class PruebaComponent extends Base {
       console.log(error);
     })
   }
+
+  next() {
+    let slider = document.getElementsByClassName("slider-width")[0] as HTMLElement;
+    if(this.count > - (document.getElementsByClassName("contenedor").length * 350) + 1050){
+      this.count = this.count - 350
+    }
+    slider.style.left = this.count + "px";
+  }
+
+  prev() {
+    let slider = document.getElementsByClassName("slider-width")[0] as HTMLElement;
+    if(this.count<0){
+      this.count = this.count + 350
+    }
+    slider.style.left = this.count + "px";
+  }
+
+
 }
+
+

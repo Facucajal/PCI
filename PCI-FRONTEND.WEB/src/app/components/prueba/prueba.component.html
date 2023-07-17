@@ -1,84 +1,293 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <title></title>
-    <link rel="stylesheet" hre="carousel.components.scss">
-  </head>
-  <body>
-        <div class="contenedor">
-            <section class="tarjeta" id="tarjeta">
-                <div class="delantera">
-                    <div class="logo-marca" id="logo-marca">
-                        <!-- <img src="img/logos/visa.png" alt=""> -->
-                    </div>
-                    <!--img src="img/chip-tarjeta.png" class="chip" alt=""-->
-                    <div class="datos">
-                        <div class="grupo" id="numero">
-                            <p class="label">Número Tarjeta</p>
-                            <p class="numero">{{tarjeta?.numeroTarjeta}}</p>
-                        </div>
-                        <div class="flexbox">
-                            <div class="grupo" id="nombre">
-                                <p class="label">Nombre Tarjeta</p>
-                                <p class="nombre">{{tarjeta?.titular}}</p>
-                            </div>
 
-                            <div class="grupo" id="expiracion">
-                                <p class="label">Expiracion</p>
-                                <p class="expiracion">{{tarjeta?.fechaExpiracion}}</p>
+<head>
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="slider-container" item-display-d="4" item-display-t="3" item-display-m="1">
+        <div class="slider-width">
+            <div class="contenedor">
+                <div class="tarjeta">
+                    <div class="logo">
+                        <img src="assets/img/bbva.png" alt="logo">
+                    </div>
+                    <img class="chip" src="assets/img/chip-tarjeta.png">
+                    <div class="numero">
+                        <p>1***  ****  ****  ****</p>
+                    </div>
+                    <div class="footer">
+                        <div>
+                            <div class="fechas">
+                                <p>desde:01/01</p>
+                                <p>hasta:01/01</p>
                             </div>
+                            <div class="titular">
+                                <p class="titular">facuuuuu</p>
+                            </div> 
+                        </div>
+                        <div class="visa">
+                            <img src="assets/img/visa.png">
                         </div>
                     </div>
                 </div>
-
-                <!--div class="trasera">
-                    <div class="barra-magnetica"></div>
-                    <div class="datos">
-                        <div class="grupo" id="firma">
-                            <p class="label">Firma</p>
-                            <div class="firma"><p></p></div>
+            </div>
+            <div class="contenedor">
+                <div class="tarjeta">
+                    <div class="logo">
+                        <img src="assets/img/bbva.png" alt="logo">
+                    </div>
+                    <img class="chip" src="assets/img/chip-tarjeta.png">
+                    <div class="numero">
+                        <p>****  ****  ****  ****</p>
+                    </div>
+                    <div class="footer">
+                        <div>
+                            <div class="fechas">
+                                <p>desde:01/01</p>
+                                <p>hasta:01/01</p>
+                            </div>
+                            <div class="titular">
+                                <p class="titular">facuuuuu</p>
+                            </div> 
                         </div>
-                        <div class="grupo" id="ccv">
-                            <p class="label">CCV</p>
-                            <p class="ccv"></p>
+                        <div class="visa">
+                            <img src="assets/img/visa.png">
                         </div>
                     </div>
-                    <p class="leyenda">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus exercitationem, voluptates illo.</p>
-                    <a href="#" class="link-banco">www.tubanco.com</a>
-                </div-->
-            </section>
+                </div>
+            </div>
+            <div class="contenedor">
+                <div class="tarjeta">
+                    <div class="logo">
+                        <img src="assets/img/bbva.png" alt="logo">
+                    </div>
+                    <img class="chip" src="assets/img/chip-tarjeta.png">
+                    <div class="numero">
+                        <p>****  ****  ****  ****</p>
+                    </div>
+                    <div class="footer">
+                        <div>
+                            <div class="fechas">
+                                <p>desde:01/01</p>
+                                <p>hasta:01/01</p>
+                            </div>
+                            <div class="titular">
+                                <p class="titular">facuuuuu</p>
+                            </div> 
+                        </div>
+                        <div class="visa">
+                            <img src="assets/img/visa.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="contenedor">
+                <div class="tarjeta">
+                    <div class="logo">
+                        <img src="assets/img/bbva.png" alt="logo">
+                    </div>
+                    <img class="chip" src="assets/img/chip-tarjeta.png">
+                    <div class="numero">
+                        <p>****  ****  ****  ****</p>
+                    </div>
+                    <div class="footer">
+                        <div>
+                            <div class="fechas">
+                                <p>desde:01/01</p>
+                                <p>hasta:01/01</p>
+                            </div>
+                            <div class="titular">
+                                <p class="titular">facuuuuu</p>
+                            </div> 
+                        </div>
+                        <div class="visa">
+                            <img src="assets/img/visa.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="contenedor">
+                <div class="tarjeta">
+                    <div class="logo">
+                        <img src="assets/img/bbva.png" alt="logo">
+                    </div>
+                    <img class="chip" src="assets/img/chip-tarjeta.png">
+                    <div class="numero">
+                        <p>****  ****  ****  ****</p>
+                    </div>
+                    <div class="footer">
+                        <div>
+                            <div class="fechas">
+                                <p>desde:01/01</p>
+                                <p>hasta:01/01</p>
+                            </div>
+                            <div class="titular">
+                                <p class="titular">facuuuuu</p>
+                            </div> 
+                        </div>
+                        <div class="visa">
+                            <img src="assets/img/visa.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="contenedor">
+                <div class="tarjeta">
+                    <div class="logo">
+                        <img src="assets/img/bbva.png" alt="logo">
+                    </div>
+                    <img class="chip" src="assets/img/chip-tarjeta.png">
+                    <div class="numero">
+                        <p>****  ****  ****  ****</p>
+                    </div>
+                    <div class="footer">
+                        <div>
+                            <div class="fechas">
+                                <p>desde:01/01</p>
+                                <p>hasta:01/01</p>
+                            </div>
+                            <div class="titular">
+                                <p class="titular">facuuuuu</p>
+                            </div> 
+                        </div>
+                        <div class="visa">
+                            <img src="assets/img/visa.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="contenedor">
+                <div class="tarjeta">
+                    <div class="logo">
+                        <img src="assets/img/bbva.png" alt="logo">
+                    </div>
+                    <img class="chip" src="assets/img/chip-tarjeta.png">
+                    <div class="numero">
+                        <p>****  ****  ****  ****</p>
+                    </div>
+                    <div class="footer">
+                        <div>
+                            <div class="fechas">
+                                <p>desde:01/01</p>
+                                <p>hasta:01/01</p>
+                            </div>
+                            <div class="titular">
+                                <p class="titular">facuuuuu</p>
+                            </div> 
+                        </div>
+                        <div class="visa">
+                            <img src="assets/img/visa.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="contenedor">
+                <div class="tarjeta">
+                    <div class="logo">
+                        <img src="assets/img/bbva.png" alt="logo">
+                    </div>
+                    <img class="chip" src="assets/img/chip-tarjeta.png">
+                    <div class="numero">
+                        <p>****  ****  ****  ****</p>
+                    </div>
+                    <div class="footer">
+                        <div>
+                            <div class="fechas">
+                                <p>desde:01/01</p>
+                                <p>hasta:01/01</p>
+                            </div>
+                            <div class="titular">
+                                <p class="titular">facuuuuu</p>
+                            </div> 
+                        </div>
+                        <div class="visa">
+                            <img src="assets/img/visa.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="contenedor">
+                <div class="tarjeta">
+                    <div class="logo">
+                        <img src="assets/img/bbva.png" alt="logo">
+                    </div>
+                    <img class="chip" src="assets/img/chip-tarjeta.png">
+                    <div class="numero">
+                        <p>****  ****  ****  ****</p>
+                    </div>
+                    <div class="footer">
+                        <div>
+                            <div class="fechas">
+                                <p>desde:01/01</p>
+                                <p>hasta:01/01</p>
+                            </div>
+                            <div class="titular">
+                                <p class="titular">facuuuuu</p>
+                            </div> 
+                        </div>
+                        <div class="visa">
+                            <img src="assets/img/visa.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="contenedor">
+                <div class="tarjeta">
+                    <div class="logo">
+                        <img src="assets/img/bbva.png" alt="logo">
+                    </div>
+                    <img class="chip" src="assets/img/chip-tarjeta.png">
+                    <div class="numero">
+                        <p>****  ****  ****  ****</p>
+                    </div>
+                    <div class="footer">
+                        <div>
+                            <div class="fechas">
+                                <p>desde:01/01</p>
+                                <p>hasta:01/01</p>
+                            </div>
+                            <div class="titular">
+                                <p class="titular">facuuuuu</p>
+                            </div> 
+                        </div>
+                        <div class="visa">
+                            <img src="assets/img/visa.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="contenedor">
+                <div class="tarjeta">
+                    <div class="logo">
+                        <img src="assets/img/bbva.png" alt="logo">
+                    </div>
+                    <img class="chip" src="assets/img/chip-tarjeta.png">
+                    <div class="numero">
+                        <p>****  ****  ****  ****</p>
+                    </div>
+                    <div class="footer">
+                        <div>
+                            <div class="fechas">
+                                <p>desde:01/01</p>
+                                <p>hasta:01/01</p>
+                            </div>
+                            <div class="titular">
+                                <p class="titular">facuuuuu</p>
+                            </div> 
+                        </div>
+                        <div class="visa">
+                            <img src="assets/img/visa.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <!--form class="formulario" [formGroup]="form" (ngSubmit)="guardarTarjeta()"-->
-            <div class="form-group">
-                <label >Nombre del titular:</label>
-                <input formControlName="titular" type="text" placeholder="Titular" >
-            </div>
-            <div class="form-group">
-                <label >Número de tarjeta:</label>
-                <input formControlName="numeroTarjeta" type="text" placeholder="Numero de Tarjeta" >
-            </div>
-            <div class="form-group">
-                <label >Fecha de vencimiento:</label>
-                <select formControlName="mes" placeholder="MM">
-                  <option value="01">Enero</option>
-                  <option value="02">Febrero</option>
-                  <option value="03">Marzo</option>
-                  <option value="04">Abril</option>
-                  <option value="05">Mayo</option>
-                  <option value="06">Junio</option>
-                  <option value="07">Julio</option>
-                  <option value="08">Agosto</option>
-                  <option value="09">Septiembre</option>
-                  <option value="10">Octubre</option>
-                  <option value="11">Noviembre</option>
-                  <option value="12">Diciembre</option>
-                </select>
-                <input class="fecha" formControlName="anio" type="text" placeholder="Anio">
-            </div>
-            <div class="form-group">
-                <label >CVV:</label>
-                <input formControlName="cvv" type="text" placeholder="cvv" >
-            </div>
-            <button type="submit">Enviar</button>
-        <!--/form-->
-  </body>
+    </div>
+    <button type="button" class="btn" (click)="prev()">Prev</button>
+    <button type="button" class="btn" (click)="next()">Next</button>
+</body>
+
 </html>
