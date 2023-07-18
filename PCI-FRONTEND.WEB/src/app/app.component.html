@@ -14,6 +14,18 @@
             <li><a routerLink="/tarjetas"  routerLinkActive="activebutton">Tarjetas</a></li>
         </nav>
     </div>
+    <div class="notification" [hidden]="!altaNot">
+        <p>¡Tarjeta creada exitosamente!</p>
+        <button class="close-btn" (click)="mostrarAltaNot()">X</button>
+    </div>
+    <div class="notification" [hidden]="!modNot">
+        <p>¡Tarjeta Actualizada exitosamente!</p>
+        <button class="close-btn" (click)="mostrarModNot()">X</button>
+    </div>
+    <div class="bajaNotificacion" [hidden]="!bajaNot">
+        <p>¡Tarjeta Eliminada exitosamente!</p>
+        <button class="close-btn" (click)="mostrarBajaNot()">X</button>
+    </div>
     <router-outlet></router-outlet>
 </body>
 </html>

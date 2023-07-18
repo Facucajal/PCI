@@ -39,9 +39,15 @@ export class CreateComponent extends Base{
     this._tarjetaService.saveTarjeta(tarjeta).subscribe(data => {
       this.router.navigate(['/tarjetas'])
       this.form.reset();
+      this.mostrarNotificacion();
     }, error => {
 
       console.log(error)
     })
+  }
+
+  mostrarNotificacion(){
+    this.altaNotificacion();
+    this.router.navigate(['/tarjetas']);
   }
 }

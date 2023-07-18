@@ -1,3 +1,29 @@
+.notification {
+  position: relative;
+  background-color: #2fd620;
+  border: 1px solid #050505;
+  justify-content: space-between;
+  font-size: 15px;
+  font-family: 'Calibri';
+  p{
+    margin-left: 20px;
+  }
+
+  .close-btn {
+    position: absolute;
+    background-color: #2fd620;
+    color: #000000;
+    border: 1px solid #ffffff;
+    padding: 10px 10px;
+    cursor: pointer;
+    font-size: 10px;
+    top: 5px;
+    right: 5px;
+    border-radius: 40%;
+  }
+  
+}
+
 .contenedor{
   width: 350px;
   height: 200px;

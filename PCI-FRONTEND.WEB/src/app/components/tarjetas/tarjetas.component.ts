@@ -11,7 +11,7 @@ import { Base } from '../base';
 })
 export class TarjetasComponent extends Base{
   filtroTitular: String;
-  
+
   ngOnInit(): void {
     this.obtenerTarjetas();
   }
@@ -30,6 +30,7 @@ export class TarjetasComponent extends Base{
   eliminarTarjeta(id: number){
     this._tarjetaService.deleteTarjeta(id).subscribe(data =>{
       this.obtenerTarjetas();
+      this.mostrarNotificacion();
     }, error => {
       console.log(error);
     }) 
@@ -44,5 +45,9 @@ export class TarjetasComponent extends Base{
       console.log(error);
     })
   }
-  
+
+  mostrarNotificacion(){
+    this.bajaNotificacion();
+    this.router.navigate(['/tarjetas']);
+  }
 }

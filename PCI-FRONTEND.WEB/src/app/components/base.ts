@@ -2,6 +2,7 @@ import { Component, Directive, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { TarjetaService } from 'src/app/services/tarjeta.service';
 import {Router,ActivatedRoute} from '@angular/router'
+import { NotificationServiceService } from '../services/notification-service.service';
 
 
 @Directive()
@@ -13,7 +14,8 @@ export abstract class Base {
   constructor(protected fb: FormBuilder,
     protected _tarjetaService: TarjetaService,
     public router: Router,
-    protected activeRoute: ActivatedRoute
+    protected activeRoute: ActivatedRoute,
+    protected notificationService: NotificationServiceService
     ) {
       this.form = this.fb.group({
         titular: ['', Validators.required],
@@ -27,4 +29,16 @@ export abstract class Base {
         banco:['',Validators.required]
       })
   };
+
+  altaNotificacion() {
+    this.notificationService.altaNotificacion();
+  }
+
+  bajaNotificacion() {
+    this.notificationService.bajaNotificacion();
+  }
+
+  modificacionNotificacion() {
+    this.notificationService.modificacionNotificacion();
+  }
 }

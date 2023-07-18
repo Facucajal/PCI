@@ -10,6 +10,7 @@ import { Base } from '../base';
   styleUrls: ['../create/create.component.scss']
 })
 export class EditComponent extends Base {
+  showNotification = false;
 
 
   ngOnInit(): void {
@@ -56,8 +57,14 @@ export class EditComponent extends Base {
     tarjeta.id = id;
     this._tarjetaService.updateTarjeta(id,tarjeta).subscribe(data => {
       this.form.reset();
+      this.mostrarNotificacion();
     }, error => {
       console.log(error)
     })
+  }
+
+  mostrarNotificacion(){
+    this.modificacionNotificacion();
+    this.router.navigate(['/tarjetas']);
   }
 }
