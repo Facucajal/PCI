@@ -1,50 +1,56 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Page Title</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    <section class="product">
-        <div class="container-fluid">
-            <div class="slider-wrap">
-                <div class="slider-main" >
-                    <div class="contenedor"*ngFor="let tarjeta of listTarjetas">
-                        <div class="tarjeta">
-                            <div class="logo">
-                                <img src="assets/img/bbva2.png" alt="logo">
-                            </div>
-                            <img class="chip" src="assets/img/chip-tarjeta.png">
-                            <div class="numero">
-                                <p>{{tarjeta.numeroTarjeta.slice(0,4)}}  {{tarjeta.numeroTarjeta.slice(4,8)}}  {{tarjeta.numeroTarjeta.slice(8,12)}}  {{tarjeta.numeroTarjeta.slice(12,16)}}</p>
-                            </div>
-                            <div class="footer">
-                                <div>
-                                    <div class="fechas">
-                                        <p>desde:{{tarjeta.fechaInicio.slice(5,7)}}/{{tarjeta.fechaInicio.slice(2,4)}}</p>
-                                        <p>hasta: {{tarjeta.fechaExpiracion.slice(5,7)}}/{{tarjeta.fechaExpiracion.slice(2,4)}}</p>
-                                    </div>
-                                    <div class="titular">
-                                        <p class="titular">{{tarjeta?.titular}}</p>
-                                    </div> 
-                                </div>
-                                <div class="visa">
-                                    <img src="assets/img/visa.png">
-                                </div>
-                            </div>
-                        </div>
+    <div class="slider-container">
+        <div class="slider-width">
+            <div class="contenedor" *ngFor="let tarjeta of listTarjetas">
+                <div [class.tarjeta-Clasica]="tarjeta.categoria==0"
+                    [class.tarjeta-Oro]="tarjeta.categoria==1"
+                    [class.tarjeta-Platino]="tarjeta.categoria==2"
+                    [class.tarjeta-Black]="tarjeta.categoria==3">
+                    <div [class.logo]="tarjeta.banco==''"
+                            [class]="tarjeta.banco">
+                        <img *ngIf="tarjeta.banco!='';" [src]="'assets/img/' + tarjeta.banco + '.png'" alt="logo">
                     </div>
-                </div>    
-                <div class="button-area">
-                    <button type="button" class="prev"   appPrev>Prev</button>
-                    <button type="button" class="next" appNext>Next</button>
-
+                    <img class="chip" src="assets/img/chip-tarjeta.png">
+                    <div class="numero">
+                        <p>****  ****  ****  {{tarjeta.numeroTarjeta.slice(12,16)}}</p>
+                    </div>
+                    <div class="footer">
+                        <div>
+                            <div class="fechas">
+                                <p>desde:{{tarjeta.fechaInicio.slice(5,7)}}/{{tarjeta.fechaInicio.slice(2,4)}}</p>
+                                <p>hasta:{{tarjeta.fechaExpiracion.slice(5,7)}}/{{tarjeta.fechaExpiracion.slice(2,4)}}</p>
+                            </div>
+                            <div class="titular">
+                                <p class="titular">{{tarjeta?.titular}}</p>
+                            </div> 
+                        </div>
+                        <div *ngIf="tarjeta.numeroTarjeta[0]==4; else elseBlock1" class="visa">
+                            <img src="assets/img/visa.png">
+                        </div>
+                        <ng-template #elseBlock1>
+                          <div *ngIf="tarjeta.numeroTarjeta[0]==5; else elseBlock2" class="master">
+                            <img src="assets/img/mastercard-logo.png">
+                          </div>
+                          <ng-template #elseBlock2>
+                            <div *ngIf="tarjeta.numeroTarjeta[0]==3" class="AmericanExp">
+                              <img src="assets/img/American-Express.png">
+                            </div>
+                          </ng-template>
+                        </ng-template>
+                    </div>
                 </div>
-            </div>
+            </div>          
         </div>
-
-    </section>
+    </div>
+    <button type="button" class="btn" (click)="prev()">Prev</button>
+    <button type="button" class="btn" (click)="next()">Next</button>
 </body>
+
 </html>

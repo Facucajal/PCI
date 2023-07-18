@@ -10,6 +10,7 @@ import { Base } from '../base';
 })
 export class PruebaComponent extends Base {
   count = 0;
+  banco="bbva"
 
   ngOnInit(): void {
     this.obtenerTarjetas()

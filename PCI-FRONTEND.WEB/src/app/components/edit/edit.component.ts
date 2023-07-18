@@ -6,7 +6,7 @@ import { Base } from '../base';
 
 @Component({
   selector: 'app-edit',
-  templateUrl: './edit.component.html',
+  templateUrl: '../create/create.component.html',
   styleUrls: ['../create/create.component.scss']
 })
 export class EditComponent extends Base {
@@ -17,7 +17,7 @@ export class EditComponent extends Base {
     this.mostrarTarjeta(id);
   }
 
-  onSubmit(){
+  guardarTarjeta(){
     const id2 = parseInt(this.activeRoute.snapshot.paramMap.get('id'))
     this.updateTarjeta(id2);
     this.router.navigate(['/tarjetas'])
@@ -37,7 +37,8 @@ export class EditComponent extends Base {
         anioExp: tarjeta.fechaExpiracion.slice(0,4),
         mesExp: tarjeta.fechaExpiracion.slice(5,7),
         cvv: tarjeta.cvv,
-        categoria: tarjeta.categoria
+        categoria: tarjeta.categoria,
+        banco: tarjeta.banco
       })
     })
   }
@@ -50,7 +51,8 @@ export class EditComponent extends Base {
       fechaExpiracion: (this.form.get('anioExp')?.value +"-"+ this.form.get('mesExp')?.value+"-"+"01"),
       cvv: this.form.get('cvv')?.value,
       fechaInicio: (this.form.get('anioIni')?.value +"-"+ this.form.get('mesIni')?.value+"-"+"01"),
-      categoria: +this.form.get('categoria')?.value
+      categoria: +this.form.get('categoria')?.value,
+      banco: this.form.get('banco')?.value
     }
     console.log(tarjeta);
     tarjeta.id = id;

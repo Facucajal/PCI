@@ -17,5 +17,7 @@ namespace PCI_Backend.API.Models
 
         public Categoria categoria { get; set; }
 
+        public String banco { get; set; }
+
     }
 }

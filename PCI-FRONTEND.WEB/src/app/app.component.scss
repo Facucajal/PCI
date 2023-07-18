@@ -11,6 +11,7 @@ body {
         .titulo{
             text-align: center;
             margin: 0;
+            font-family: 'Calibri';
         }
 
         .navegacion{
@@ -26,6 +27,7 @@ body {
                     color: white;
                     padding: 20px;
                     display: block;
+                    font-family: 'Calibri';
 
                 }
                 a:hover{
@@ -34,7 +36,6 @@ body {
                 .activebutton {
 
                     background: #bddbfa linear-gradient(to bottom, #bddbfa 5%, #80b5ea 100%);
-
                     color: #ffffff;
                     text-shadow: 0 1px 0 #528ecc;
                 }

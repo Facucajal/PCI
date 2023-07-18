@@ -24,7 +24,8 @@ export abstract class Base {
         mesExp: ['',[Validators.required, Validators.maxLength(2),Validators.minLength(2)]],
         cvv: ['',/*[Validators.required, Validators.maxLength(3),Validators.minLength(3)]*/],
         fechaInicio: [''],
-        categoria: [0]
+        categoria: [0],
+        banco:['']
       })
   };
 }

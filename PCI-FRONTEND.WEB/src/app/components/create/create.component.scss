@@ -31,6 +31,66 @@
           }
       }
 
+      .Bbva{
+        text-align: left;
+        min-height: 40px;
+        margin-top: 10px;
+        margin-left: 10px;
+        img{
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          max-width: 70px;
+        }
+      }
+      .Santander{
+        text-align: left;
+        min-height: 40px;
+        margin-top: 10px;
+        margin-left: 10px;
+        img{
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          max-width: 90px;
+        }
+      }
+      .Banco-Nacion{
+        text-align: left;
+        min-height: 40px;
+        margin-top: 10px;
+        margin-left: 10px;
+        img{
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          max-width: 110px;
+        }
+      }
+      .Galicia{
+        text-align: left;
+        min-height: 40px;
+        margin-top: 10px;
+        margin-left: 10px;
+        img{
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          max-width: 90px;
+        }
+      }
+      .Banco-Ciudad{
+        text-align: left;
+        min-height: 40px;
+        margin-top: 10px;
+        img{
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          max-width: 130px;
+        }
+        }
+
       .chip{
           width: 100%;
           height: 100%;
@@ -96,7 +156,7 @@
   .tarjeta-Clasica{
     @extend .tarjeta-base;
     background: rgb(251,251,251);
-background: linear-gradient(203deg, rgba(251,251,251,1) 5%, rgba(255,9,9,1) 92%);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
   }
   .tarjeta-Oro{
     @extend .tarjeta-base;

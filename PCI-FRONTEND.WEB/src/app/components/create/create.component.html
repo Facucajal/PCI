@@ -1,7 +1,6 @@
 <html>
   <head>
     <title></title>
-    <link rel="stylesheet" hre="tarjeta-credito.components.scss">
   </head>
   <body>
     <div>
@@ -11,8 +10,9 @@
               [class.tarjeta-Oro]="form.get('categoria').value==1"
               [class.tarjeta-Platino]="form.get('categoria').value==2"
               [class.tarjeta-Black]="form.get('categoria').value==3">
-            <div class="logo">
-                <img src="assets/img/bbva.png" alt="logo">
+            <div [class.logo]="form.get('banco').value==''"
+              [class]="form.get('banco').value">
+              <img *ngIf="form.get('banco').value!='';" [src]="'assets/img/' + form.get('banco').value + '.png'" alt="logo">
             </div>
             <img class="chip" src="assets/img/chip-tarjeta.png">
             <div class="numero">
@@ -51,6 +51,14 @@
             <h4>Formulario</h4>
             <input class="dato" formControlName="titular" type="text" placeholder="Titular">
             <input class="dato" formControlName="numeroTarjeta" type="text" placeholder="Numero de Tarjeta">
+            <select class="dato" formControlName="banco">
+              <option disabled selected value="">Banco</option>
+              <option value="Bbva">Bbva</option>
+              <option value="Santander">Santander</option>
+              <option value="Banco-Nacion">Banco Nacion</option>
+              <option value="Galicia">Galicia</option>
+              <option value="Banco-Ciudad">Banco Ciudad</option>
+            </select>
             <label>Fecha Inicio:</label>
             <div>
               <select class="fecha" formControlName="mesIni">
