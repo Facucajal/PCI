@@ -209,6 +209,9 @@
     font-size: 18px;
     color: white;
   }
+  .dato:invalid{
+    background-color: pink;
+  }
 
   .fecha{
     box-sizing: border-box;

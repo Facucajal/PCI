@@ -18,17 +18,15 @@ export class EditComponent extends Base {
   }
 
   guardarTarjeta(){
-    const id2 = parseInt(this.activeRoute.snapshot.paramMap.get('id'))
-    this.updateTarjeta(id2);
+    const id = parseInt(this.activeRoute.snapshot.paramMap.get('id')) //agarro el id del path
+    this.updateTarjeta(id);
     this.router.navigate(['/tarjetas'])
   }
-
 
   mostrarTarjeta(id: number){
     this._tarjetaService.getTarjeta(id).subscribe(data => {
       console.log(data);
       const tarjeta: any = data
-
       this.form.patchValue({
         titular: tarjeta.titular,
         numeroTarjeta: tarjeta.numeroTarjeta,
@@ -61,7 +59,5 @@ export class EditComponent extends Base {
     }, error => {
       console.log(error)
     })
-
   }
-
 }

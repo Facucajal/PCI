@@ -21,6 +21,7 @@ export class TarjetasComponent extends Base{
     this._tarjetaService.getListTarjetas().subscribe(data => {
       console.log(data);
       this.listTarjetas = data;
+      this.filtroTitular="";
     }, error => {
       console.log(error);
     })
@@ -28,7 +29,6 @@ export class TarjetasComponent extends Base{
 
   eliminarTarjeta(id: number){
     this._tarjetaService.deleteTarjeta(id).subscribe(data =>{
-
       this.obtenerTarjetas();
     }, error => {
       console.log(error);

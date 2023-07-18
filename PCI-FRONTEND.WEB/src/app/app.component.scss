@@ -5,7 +5,8 @@ body {
     margin: 0;
 
     .header{
-        background: rgb(77, 101, 133);
+        //background: rgb(77, 101, 133);
+        background: #bddbfa linear-gradient(to bottom, #759abe 5%, #063564 100%);
         color: white;
         padding-top: 20px;
         .titulo{
@@ -35,7 +36,7 @@ body {
                 }
                 .activebutton {
 
-                    background: #bddbfa linear-gradient(to bottom, #bddbfa 5%, #80b5ea 100%);
+                    background: #bddbfa linear-gradient(to bottom, #7cbcfc 5%, #1772cc 100%);
                     color: #ffffff;
                     text-shadow: 0 1px 0 #528ecc;
                 }

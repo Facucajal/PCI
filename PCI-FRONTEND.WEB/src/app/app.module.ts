@@ -27,11 +27,12 @@ import { PruebaComponent } from './components/prueba/prueba.component';
     FormsModule,
     //Toma arreglo de objetos que definen las rutas
     RouterModule.forRoot([
+      {path:'',component:CarouselComponent},
       {path:'create',component:CreateComponent},
       {path:'tarjetas',component:TarjetasComponent},
       {path:'edit/:id',component:EditComponent},
-      {path:'',component:CarouselComponent},
-      {path:'prueba',component:PruebaComponent}
+      {path:'prueba',component:PruebaComponent},
+      {path:'**',component:CarouselComponent}
     ])
   ],
   providers: [],

@@ -20,8 +20,6 @@ export class CarouselComponent extends Base{
     this._tarjetaService.getListTarjetas().subscribe(data => {
       console.log(data);
       this.listTarjetas = data;
-      this.tarjeta = this.listTarjetas[0]
-
     }, error => {
       console.log(error);
     })

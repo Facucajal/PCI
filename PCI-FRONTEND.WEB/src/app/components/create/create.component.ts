@@ -12,7 +12,6 @@ import { Base } from '../base';
 export class CreateComponent extends Base{
 
   ngOnInit(): void {
-
   }
 
   obtenerTarjetas(){
@@ -33,14 +32,11 @@ export class CreateComponent extends Base{
       fechaExpiracion: (this.form.get('anioExp')?.value +"-"+ this.form.get('mesExp')?.value+"-"+"01"),
       cvv: this.form.get('cvv')?.value,
       fechaInicio: (this.form.get('anioIni')?.value +"-"+ this.form.get('mesIni')?.value+"-"+"01"),
-      categoria: this.form.get('categoria')?.value,
+      categoria: +this.form.get('categoria')?.value,
       banco: this.form.get('banco')?.value
     }
-
     console.log(tarjeta);
-    
     this._tarjetaService.saveTarjeta(tarjeta).subscribe(data => {
-
       this.router.navigate(['/tarjetas'])
       this.form.reset();
     }, error => {

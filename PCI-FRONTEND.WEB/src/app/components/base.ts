@@ -17,15 +17,14 @@ export abstract class Base {
     ) {
       this.form = this.fb.group({
         titular: ['', Validators.required],
-        numeroTarjeta: ['', /*[Validators.required, Validators.maxLength(16),Validators.minLength(16)]*/],
-        anioIni: ['',[Validators.required, Validators.maxLength(2),Validators.minLength(2)]],
+        numeroTarjeta: ['', [Validators.required, Validators.maxLength(16),Validators.minLength(16)]],
+        anioIni: ['',[Validators.required, Validators.maxLength(4),Validators.minLength(4)]],
         mesIni: ['',[Validators.required, Validators.maxLength(2),Validators.minLength(2)]],
-        anioExp: ['',[Validators.required, Validators.maxLength(2),Validators.minLength(2)]],
+        anioExp: ['',[Validators.required, Validators.maxLength(4),Validators.minLength(4)]],
         mesExp: ['',[Validators.required, Validators.maxLength(2),Validators.minLength(2)]],
-        cvv: ['',/*[Validators.required, Validators.maxLength(3),Validators.minLength(3)]*/],
-        fechaInicio: [''],
-        categoria: [0],
-        banco:['']
+        cvv: ['',[Validators.required, Validators.maxLength(3),Validators.minLength(3)]],
+        categoria: [0,Validators.required],
+        banco:['',Validators.required]
       })
   };
 }

@@ -49,8 +49,8 @@
       <form [formGroup]="form" (ngSubmit)="guardarTarjeta()">
           <section class="formulario" >
             <h4>Formulario</h4>
-            <input class="dato" formControlName="titular" type="text" placeholder="Titular">
-            <input class="dato" formControlName="numeroTarjeta" type="text" placeholder="Numero de Tarjeta">
+            <input class="dato" maxlength="20" formControlName="titular" type="text" placeholder="Titular">
+            <input class="dato" maxlength="16" formControlName="numeroTarjeta" type="text" placeholder="Numero de Tarjeta">
             <select class="dato" formControlName="banco">
               <option disabled selected value="">Banco</option>
               <option value="Bbva">Bbva</option>
@@ -76,7 +76,7 @@
                 <option value="11">Noviembre</option>
                 <option value="12">Diciembre</option>
               </select>
-              <input class="fecha" formControlName="anioIni" type="text" placeholder="Anio">
+              <input class="fecha" maxlength="4" formControlName="anioIni" type="text" placeholder="Anio">
             </div>
             <label>Fecha Expiracion:</label>
             <div>
@@ -95,9 +95,9 @@
                 <option value="11">Noviembre</option>
                 <option value="12">Diciembre</option>
               </select>
-              <input class="fecha" formControlName="anioExp" type="text" placeholder="Anio">
+              <input class="fecha" maxlength="4" formControlName="anioExp" type="text" placeholder="Anio">
             </div>
-            <input class="dato" formControlName="cvv" type="text" placeholder="cvv">
+            <input class="dato" maxlength="3" formControlName="cvv" type="text" placeholder="cvv">
             <select class="dato" formControlName="categoria">
               <option disabled selected value="">Categoria</option>
               <option value=0>Clasica</option>

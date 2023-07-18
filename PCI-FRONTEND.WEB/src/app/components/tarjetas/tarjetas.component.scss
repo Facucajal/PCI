@@ -10,6 +10,25 @@
     .titular{
         margin-top: 5px;
         margin-bottom: 5px;
+        .button {
+            background-color: #606370;
+            border: none;
+            color: white;
+            padding: 3px 9px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-left: 5px;
+            border: 2px solid #0f0f0f;
+            cursor: pointer;
+        }
+        input{
+            background:#d9dbe2;
+            padding: 5px;
+            border-radius: 4px;
+            border: 2px solid #000000;
+        }
     }
     .table{
         background-color: white;
